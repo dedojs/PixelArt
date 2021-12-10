@@ -7,7 +7,8 @@ window.addEventListener('load', iniciar);
 const line = document.getElementById('pixel-board');
 const board = document.querySelectorAll('.pixel');
 const pallet = document.getElementById('color-palette');
-criarBoard(5);
+let display = document.querySelectorAll('colors')
+criarBoard(8);
 //função criada baseada na fonte: site wallacemaxters.com.br
 //Função gera os numeros rgb de forma aleatoria, e utiliza um parseInt para pegar um numero inteiro entre 0 e 255, sendo que o valor informado como parâmetro da função é a opacidade da cor.
 function gerar_cor(opacidade = 1) {
@@ -18,27 +19,20 @@ function gerar_cor(opacidade = 1) {
   return `rgba(${r}, ${g}, ${b}, ${opacidade})`;
 }
 
+let list = [p2, p3, p4, p5, p6, p7, p8, p9]
 // Cor dos quadrados gerado aleatoriamente
-function colors() {
+function colors(element) {
+  for(let i = 0; i<list.length; i+=1){
+    list[i].style.backgroundColor = gerar_cor(1)
+  }
   let p1 = document.getElementById('p1');
   p1.style.backgroundColor = 'rgb(0,0,0)';
   p1.classList.add('selected');
-
-  let p2 = document.getElementById('p2');
-  p2.style.backgroundColor = gerar_cor(1);
-  console.log('cor p2=', (p2.style.backgroundColor = gerar_cor(1)));
-
-  let p3 = document.getElementById('p3');
-  p3.style.backgroundColor = gerar_cor(1);
-  console.log('cor p3=', (p3.style.backgroundColor = gerar_cor(1)));
-
-  let p4 = document.getElementById('p4');
-  p4.style.backgroundColor = gerar_cor(1);
-  console.log('cor p4=', (p4.style.backgroundColor = gerar_cor(1)));
 }
+  
 colors();
 //cor do titulo sendo gerada aleatoriamente
-let title = (document.getElementById('title').style.color = gerar_cor(1));
+//let title = (document.getElementById('title').style.color = gerar_cor(1));
 
 //input, pegando a quantidade de quadrados
 let numero;
@@ -73,7 +67,7 @@ function deletar() {
 //função para resetar cores
 function resetar() {
   deletar();
-  criarBoard(5);
+  criarBoard(numero);
   line.style.backgroundColor = 'white';
 }
 
@@ -91,9 +85,11 @@ function criarBoard(numero) {
   deletar();
   let n = numero * numero;
   let tamanho = numero * 43 + 5 + 'px';
-  let tam = (document.getElementById('pixel-board').style.maxWidth = tamanho);
-  //console.log(tamanho)
-  console.log(document.getElementById('pixel-board').style.maxWidth);
+  document.getElementById('pixel-board').style.maxWidth = tamanho;
+  document.getElementById('pixel-board').style.maxHeight = tamanho;
+  console.log('h',document.getElementById('pixel-board').style.maxHeight = tamanho)
+  console.log('w',document.getElementById('pixel-board').style.maxWidth);
+
   for (let i = n; i > 0; i -= 1) {
     criarQuadrado();
   }
@@ -110,38 +106,19 @@ line.addEventListener('click', clicaPixel);
 //cor inicial
 let cor = 'black';
 
+//evento onde seleciona e cor e pinta o pixel 
 function pegaCor(element) {
+  let colors = document.querySelectorAll('.color')
   cor = element.target.style.backgroundColor;
   let alvo = element.target;
-  console.log('cor', cor);
-
-  // - Pintando quadrados
-  if (alvo.className != 'target' && alvo == p1) {
-    alvo.classList.add('target');
-    alvo.classList.add('selected');
-    p2.classList.remove('target', 'selected');
-    p3.classList.remove('target', 'selected');
-    p4.classList.remove('target', 'selected');
-  } else if (alvo.className != 'target' && alvo == p2) {
-    alvo.classList.add('target');
-    alvo.classList.add('selected');
-    p1.classList.remove('target', 'selected');
-    p3.classList.remove('target', 'selected');
-    p4.classList.remove('target', 'selected');
-  } else if (alvo.className != 'target' && alvo == p3) {
-    alvo.classList.add('target');
-    alvo.classList.add('selected');
-    p1.classList.remove('target', 'selected');
-    p2.classList.remove('target', 'selected');
-    p4.classList.remove('target', 'selected');
-  } else if (alvo.className != 'target' && alvo == p4) {
-    alvo.classList.add('target');
-    alvo.classList.add('selected');
-    p1.classList.remove('target', 'selected');
-    p2.classList.remove('target', 'selected');
-    p3.classList.remove('target', 'selected');
+  for(let i = 0; i<colors.length; i+=1){
+    //console.log(colors[i])
+    colors[i].classList.remove('selected', 'target')
+    element.target.classList.add('selected', 'target')
   }
 }
+
+
 
 pallet.value = 'black';
 localStorage.setItem('pallet-color', pallet.value);

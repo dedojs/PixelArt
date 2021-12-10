@@ -1,16 +1,31 @@
 *{
   padding: 0;
-  margin-left: 0;
+  margin: 0;
   background-color: rbg(255,255,255);
+  
+  
 
+}
+body{
+  background-color: white;
+  border: 10px solid gold;
+  
 }
 
 #title{
   text-align: center;
+  background-color: black;
+  margin-bottom: 20px;
+  color: gold;
 }
 
 #color-palette{
   text-align: center;
+  margin-top: 20px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-block-start: 0;
+
 
 }
 
@@ -24,9 +39,10 @@
 
 #p1{
   background-color: black;
+  
 }
 
-#p5{
+#p10{
   background-color: white;
 }
 
@@ -37,10 +53,9 @@
   padding: 0;
   max-width: 206px;
   max-height: 206px;
-  /*border: 2px solid red;*/
+  border: 0px solid black;
   margin: auto;
   background-color: rgb(255, 255, 255);
-
 
 }
 
@@ -69,6 +84,7 @@
 #config{
   margin-bottom: 50px;
   text-align: center;
+  margin-top: 20px;
   }
 
 
@@ -93,5 +109,16 @@ background-color: black;
   margin: 0;
   margin-bottom: -7px;
 }
+
+/*------------*/
+
+#imgs{
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-left:50px;
+}
+
+
 
 
