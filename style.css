@@ -134,6 +134,14 @@ background-color: black;
   margin-left:50px;
 }
 
-footer{
+#menuContato{
   text-align: center;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+#menuContato li{
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: 5px;
 }
