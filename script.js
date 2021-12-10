@@ -19,7 +19,7 @@ function gerar_cor(opacidade = 1) {
   return `rgba(${r}, ${g}, ${b}, ${opacidade})`;
 }
 
-let list = [p2, p3, p4, p5, p6, p7, p8, p9]
+let list = [p2, p3, p4, p5, p6, p7, p8, p9,]
 // Cor dos quadrados gerado aleatoriamente
 function colors(element) {
   for(let i = 0; i<list.length; i+=1){
@@ -28,6 +28,22 @@ function colors(element) {
   let p1 = document.getElementById('p1');
   p1.style.backgroundColor = 'rgb(0,0,0)';
   p1.classList.add('selected');
+
+  let p10 = document.getElementById('p10');
+  p10.style.backgroundColor = 'rgb(255,255,255)';
+
+  let p11 = document.getElementById('p11');
+  p11.style.backgroundColor = 'yellow';
+
+  let p12 = document.getElementById('p12');
+  p12.style.backgroundColor = 'blue';
+  
+  let p13 = document.getElementById('p13');
+  p13.style.backgroundColor = 'red';
+
+  let p14 = document.getElementById('p14');
+  p14.style.backgroundColor = 'green';
+
 }
   
 colors();

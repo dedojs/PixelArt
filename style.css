@@ -2,9 +2,7 @@
   padding: 0;
   margin: 0;
   background-color: rbg(255,255,255);
-  
-  
-
+ 
 }
 body{
   background-color: white;
@@ -26,7 +24,6 @@ body{
   margin-right: 0;
   margin-block-start: 0;
 
-
 }
 
 .color{
@@ -35,6 +32,7 @@ body{
   border: solid black 1px;
   display: inline-block;
   list-style-type:none;
+  margin-left:-5px;
 }
 
 #p1{
@@ -46,6 +44,21 @@ body{
   background-color: white;
 }
 
+#p11{
+  background-color: yellow;
+}
+
+#p12{
+  background-color: rgb(8, 12, 252);
+}
+
+#p13{
+  background-color: rgb(255, 0, 0);
+}
+
+#p14{
+  background-color: rgb(47, 243, 8);
+}
 
 
 #pixel-board{
@@ -58,7 +71,6 @@ body{
   background-color: rgb(255, 255, 255);
 
 }
-
 
 .pixel{
   width: 40px;
@@ -78,13 +90,16 @@ body{
   margin: 0;
   display: inline-block;
   margin:auto;
-
 }
 
 #config{
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   text-align: center;
   margin-top: 20px;
+  }
+
+  #config2{
+    margin-top: 20px;
   }
 
 
@@ -119,6 +134,6 @@ background-color: black;
   margin-left:50px;
 }
 
-
-
-
+footer{
+  text-align: center;
+}

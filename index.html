@@ -20,14 +20,22 @@
                 <li id='p8' class="color"></li>
                 <li id='p9' class="color"></li>
                 <li id='p10' class="color"></li>
+                <li id='p11' class="color"></li>
+                <li id='p12' class="color"></li>
+                <li id='p13' class="color"></li>
+                <li id='p14' class="color"></li>
             </ul>
         <div id="config">
+            <div>
             <label for="fname">Board Size:</label>
-            <input type="number" id="board-size" name="quantity" min="1" max="50" value="">
+            <input type="number" id="board-size" name="quantity" min="1" max="50" value="8">
             <button id="generate-board"> Criar </button>
+            </div>
+            <div id="config2">
             <button onclick="deletar()">Deletar</button>
             <button id="clear-board" onclick="resetar()">Limpar</button>
             <button id="clear-color" onclick="colors()">Mudar Cores</button>
+            </div>
             <!-- <button id="clear-board" onclick="bordersOff()">Retirar Bordas</button> -->
         </div>
         <section>
@@ -36,12 +44,16 @@
         </section>
         <section id="imgs">
             <p>Exemplos</p>
-            <img src="./imgs/mariopixel200.png">
+            <a href="./imgs/mariopixel200.png" target="_blank"><img src="./imgs/mariopixel200.png"></a>
             <img src="./imgs/dkpixel.png">
             <img src="./imgs/ralphpixel.jpg">
             <img src="./imgs/sonic.jpg">
             <img src="./imgs/sonic1.png">
         </section>
+        <footer>
+            <p>@Andre_Sousa</p>
+            
+        </footer>
     </main>
     <script src="./script.js"></script>
 </body>
